@@ -1,5 +1,14 @@
 //// TO GO IN JS FILE SHARED ACROSS SITE ////
 
+const gameIcons = {
+  4:"http://www.court-records.net/Site%20Art/buttons/buttie-apollo.gif",
+  AAI:"http://www.court-records.net/Site%20Art/buttons/buttie-edgey.gif",
+  AAI2:"http://www.court-records.net/Site%20Art/buttons/buttie-shigaraki.gif",
+  5:"http://www.court-records.net/Site%20Art/buttons/buttie-athena.gif",
+  DGS:"http://www.court-records.net/Site%20Art/buttons/buttie-ryuu.png",
+  6:"http://www.court-records.net/Site%20Art/buttons/buttie-nahyuta.png"
+};
+
 function createNav() {
   var main = document.createElement("main");
 
