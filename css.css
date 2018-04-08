@@ -1,0 +1,102 @@
+body {
+  padding: 60px 0;
+	margin: 0;
+
+	background: #363636;
+	font-family: "Book Antiqua", Arial, Helvetica, sans-serif;
+	color: #fff;
+	background-image: url(images/scanline.png);
+	background-position: center;
+
+	background: url("http://court-records.net/images/scanline.png"), url("http://court-records.net/images/court-room.jpg") #000 no-repeat fixed;
+	background-position: center center;
+	background-attachment: fixed;
+}
+
+.top {
+  padding: 10px;
+  border-bottom: #666 1px solid;
+}
+
+.top img {
+  display: block;
+  margin: 0 auto;
+}
+
+.button {
+  display: inline-block;
+  float: left;
+  margin: 9px;
+  margin-right: 20px;
+  width: 187px;
+  /*height: 50px;*/
+  box-sizing: border-box;
+  padding: 11px 20px;
+
+  background: #762F03;
+  border-radius: 7px;
+  box-shadow: 1px 2px 2px #000 inset,
+              2px 3px 2px #fff inset,
+              -1px -2px 2px #000 inset,
+              0 0 0 2px #fff;
+
+  color: #fff;
+  text-decoration: none;
+  font-family: "Book Antiqua", "Palatino", "Palatino Lintoype","Georgia", serif;
+  font-size: 23px;
+  text-align: center;
+  text-shadow: 0 0 1px #000,
+               0 0 1px #000,
+               0 0 1px #000,
+               0 0 1px #000,
+               0 0 1px #000,
+               0 0 1px #000,
+               0 0 1px #000,
+               0 0 1px #000,
+               0 0 1px #000,
+               0 0 1px #000,
+               0 0 1px #000,
+               0 0 1px #000,
+               0 0 1px #000,
+               0 0 1px #000,
+               0 0 1px #000,
+               0 0 1px #000,
+               0 0 1px #000,
+               0 0 1px #000,
+               0 0 1px #000,
+               0 0 1px #000,
+               0 0 1px #000,
+               0 0 1px #000,
+               0 0 1px #000,
+               0 0 1px #000,
+               0 0 1px #000,
+               0 0 1px #000,
+               0 0 1px #000;
+}
+
+.desc {
+  display: block;
+  margin: 12px;
+}
+
+.top {
+  background: #663300;
+}
+
+.navDiv {
+  border-bottom: rgba(0,0,0,0.3) 1px solid;
+  overflow: auto;
+}
+
+.iconsDiv {
+  float: right;
+  padding: 7px;
+  width: 315px; /* 63 */
+}
+
+main {
+  max-width: 855px;
+  margin: auto;
+  background: #917142;
+  border: #666 1px solid;
+}
