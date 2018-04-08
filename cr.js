@@ -1,6 +1,6 @@
 //// TO GO IN JS FILE SHARED ACROSS SITE ////
 
-const gameIcons = {
+const gameIcons = { // Object containing game icon URLs
   4:"http://www.court-records.net/Site%20Art/buttons/buttie-apollo.gif",
   AAI:"http://www.court-records.net/Site%20Art/buttons/buttie-edgey.gif",
   AAI2:"http://www.court-records.net/Site%20Art/buttons/buttie-shigaraki.gif",
@@ -9,7 +9,7 @@ const gameIcons = {
   6:"http://www.court-records.net/Site%20Art/buttons/buttie-nahyuta.png"
 };
 
-function createNav() {
+function createNav() { // Creates navigation page
   var main = document.createElement("main");
 
   var topDiv = document.createElement("div");
@@ -25,7 +25,7 @@ function createNav() {
   var mainDiv = document.createElement("div");
   mainDiv.className = "main";
 
-  for (var i = 0; i < listItems.length; i++) {
+  for (var i = 0; i < listItems.length; i++) { // Loops through each item of the navigation page
     var navDiv = document.createElement("div");
     navDiv.className = "navDiv";
 
@@ -33,6 +33,9 @@ function createNav() {
     navLink.className = "button";
     navLink.href = listItems[i][1];
     navLink.innerHTML = listItems[i][0];
+    if (listItems[i][0].length > 13) { // Gives buttons with a lot of text the class of "small"
+      navLink.className = "button small";
+    }
 
     var navDesc = document.createElement("p");
     navDesc.className = "desc";
@@ -40,16 +43,16 @@ function createNav() {
 
     var maxBoxes = 0;
 
-    if (listItems[i].length > 3) {
+    if (listItems[i].length > 3) { // Checks to see if game icons are included in the item of the list
 
-      if (listItems[i][3].length > maxBoxes) {
+      if (listItems[i][3].length > maxBoxes) { // Sets maxBoxes to the greatest number of game icons any item of the list contains
         maxBoxes = listItems[i][3].length;
       }
 
       var iconsDiv = document.createElement("div");
       iconsDiv.className = "iconsDiv";
 
-      for (var j = 0; j < listItems[i][3].length; j++) {
+      for (var j = 0; j < listItems[i][3].length; j++) {  // Loops through each game icon listed
         var iconImage = document.createElement("img");
         iconImage.src = gameIcons[listItems[i][3][j][0]];
         iconA = document.createElement("a");
@@ -60,8 +63,8 @@ function createNav() {
       navDiv.appendChild(iconsDiv);
     }
 
-    for (var j = 0; j < document.getElementsByClassName("iconsDiv").length; j++) {
-      document.getElementsByClassName("iconsDiv")[j].style.width = (maxBoxes * 63) + "px";
+    for (var j = 0; j < document.getElementsByClassName("iconsDiv").length; j++) { // Sets every game icons div's width to the
+      document.getElementsByClassName("iconsDiv")[j].style.width = (maxBoxes * 63) + "px"; // largest width of them all so the icons line up
     }
 
     navDiv.appendChild(navLink);
@@ -73,52 +76,3 @@ function createNav() {
 
   document.body.appendChild(main);
 };
-
-
-
-///// TO GO IN INDIVIDUAL PAGE JS ////
-
-var titleImageUrl = "http://www.court-records.net/Site%20Art/page%20headers/cr%20media.gif";  // URL of title image
-var titleImageAlt = "Media";  // Alt tag of title image
-
-// [Button text, Button URL, Description]
-var listItems = [
-  ["Screenshots", "/screenshots1.htm", "Screenshots from the games. May contain spoilers.", [
-    ["4", "/screenshots4.htm"],
-    ["AAI", ""],
-    ["AAI2", ""],
-    ["5", ""],
-    ["DGS", ""]
-  ]],
-  ["Animations", "/animations.html", "Sprites ripped from the games.", [
-    ["4", "/sprites5.htm"],
-    ["AAI", ""],
-    ["AAI2", ""]
-  ]],
-  ["Official Art", "/art.htm", "Official character and game art.", [
-    ["4", ""],
-    ["AAI", ""],
-    ["5", ""]
-  ]],
-  ["Locations", "/places.htm", "Background art ripped from the games.", [
-    ["4", ""],
-    ["AAI", ""]
-  ]],
-  ["Evidence", "/Evidence.htm", "Evidence icons ripped from the games.", [
-    ["4", ""],
-    ["AAI", ""],
-    ["AAI2", ""],
-    ["5", ""]
-  ]],
-  ["Graphics Rips", "/animations.htm", "Miscellaneous graphics ripped from the games.", [
-    ["4", ""],
-    ["AAI", ""],
-    ["AAI2", ""],
-    ["5", ""]
-  ]],
-  ["Trailers", "/animations.htm", "Links to trailers and other promotional materials."],
-  ["Audio", "/animations.htm", "Voice clips and sound effects ripped from the games, and soundtrack tracklists."],
-  ["Manga", "/animations.htm", "Manga based on the games."]
-];
-
-createNav();
